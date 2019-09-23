@@ -35,6 +35,9 @@ function [] = generate_double_pendulum_eom(values)
     equations = [e1; e2];
 
     % save equations to mat file
+    if ~exist('outputs', 'dir')
+       mkdir('outputs')
+    end
     save('outputs/double_eom', 'equations');
 
     % substitute in numeric values
@@ -53,6 +56,10 @@ function [] = generate_double_pendulum_eom(values)
     y2 = subs(y2, diff_f, diff_var);
 
     % make equations into function
+    if ~exist('functions', 'dir')
+       mkdir('functions')
+    end
+    
     FID = fopen('functions/double_pendulum_func.m', 'w');
     fprintf(FID, '%s\n', 'function [dydx] = double_pendulum_func(t, y)');
     fprintf(FID, '%s\n', '    dydx = [0; 0; 0; 0];');
