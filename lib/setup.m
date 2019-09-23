@@ -1,5 +1,3 @@
-clear
-
 % constant parameters
 syms m l g w_f a
 % independent variable
@@ -31,17 +29,3 @@ diff_var = [
     dT2
     ddT2
 ];
-
-% parameters to be subsituted into the model
-values = [
-    m     1.0   %kg
-    l     1.0   %m
-    g     9.81  %m/s/s
-    w_f   100   %rad/s (base oscillation)
-    a     0.1 %m (base oscillation)
-];
-
-
-
-
-

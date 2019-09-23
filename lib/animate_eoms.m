@@ -33,7 +33,10 @@ function [time, state] = animate_eoms(time, state, spatial_cb, filename)
     offset = 0.5 + num_links;
     axis([-offset, offset, -offset, offset])
 
-    mkdir('videos')
+    if ~exist('videos', 'dir')
+       mkdir('videos')
+    end
+    
     outputVideo = VideoWriter(['videos/', filename, '.avi']);
     outputVideo.FrameRate = FRAME_RATE;
     open(outputVideo)
