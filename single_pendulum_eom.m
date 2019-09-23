@@ -1,8 +1,10 @@
-clear
+% import shared libraries
+addpath lib
+parameters
 
-syms y dy ddy T dT ddT
+% setup local syms
+syms T dT ddT
 syms theta(t)
-syms m l g w_f a t
 
 variables = [T dT ddT];
 
