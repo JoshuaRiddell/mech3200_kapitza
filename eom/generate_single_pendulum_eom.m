@@ -27,6 +27,9 @@ function [] = generate_single_pendulum_eom(values)
     equations = [e1];
 
     % save equations to mat file
+    if ~exist('outputs', 'dir')
+       mkdir('outputs')
+    end
     save('outputs/single_eom', 'equations');
 
     % substitute in numeric values
@@ -41,6 +44,10 @@ function [] = generate_single_pendulum_eom(values)
     y1 = subs(y1, values(:, 1), values(:, 2));
 
     % make equations into function
+    if ~exist('functions', 'dir')
+       mkdir('functions')
+    end
+    
     FID = fopen('functions/single_pendulum_func.m', 'w');
     fprintf(FID, '%s\n', 'function [dydx] = single_pendulum_func(t, y)');
     fprintf(FID, '%s\n', '    dydx = [0; 0];');
