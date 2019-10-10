@@ -32,7 +32,7 @@ function [] = generate_double_pendulum_eom(values)
     [e1, e2] = solve(eom(1), eom(2), ddT1, ddT2);
 
     % concat equations into vector
-    equations = [e1; e2];
+    equations = [e1 - c * dT1; e2 - c * dT2];
 
     % save equations to mat file
     if ~exist('outputs', 'dir')

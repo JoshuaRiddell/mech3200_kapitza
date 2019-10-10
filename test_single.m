@@ -8,10 +8,11 @@ setup
 % parameters to be subsituted into the model
 values = [
     m     1.0   %kg
-    l     1.0   %m
+    l     1.1   %m
     g     9.81  %m/s/s
-    w_f   50   %rad/s (base oscillation)
-    a     0.05 %m (base oscillation)
+    w_f   62.8    %rad/s (base oscillation)
+    a     0.09  %m (base oscillation)
+    c     0.09 %N.s (axial damping)
 ];
 
 generate_single_pendulum_eom(values);

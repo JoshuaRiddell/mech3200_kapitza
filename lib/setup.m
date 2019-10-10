@@ -1,5 +1,5 @@
 % constant parameters
-syms m l g w_f a
+syms m l g w_f a c
 % independent variable
 syms t
 % time varying dependent variables

@@ -21,7 +21,7 @@ function [] = generate_single_pendulum_eom(values)
     eom = lagrange(L, lagrange_v(1:3));
 
     % solve for the acceleration terms
-    [e1] = solve(eom(1), ddT1);
+    [e1] = solve(eom(1), ddT1) - c * dT1;
 
     % concat equations into vector
     equations = [e1];
