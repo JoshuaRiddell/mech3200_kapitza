@@ -1,7 +1,7 @@
 function [] = generate_single_pendulum_eom(values)
     setup;
 
-    % double pendulum lagrange based on http://scienceworld.wolfram.com/physics/DoublePendulum.html
+    % double pendulum lagrange
     y0 = a * sin(w_f * t);
     x1 = l * sin(theta1);
     y1 = l * cos(theta1) + y0;  % with vertical oscillation
